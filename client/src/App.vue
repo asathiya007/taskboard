@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <b-navbar id="nav" class="mb2" toggleable="lg" type="light">
+    <b-navbar id="nav" class="mb2 pb1" toggleable="lg" type="light">
       <b-navbar-brand class="f2" href="/">Taskboard</b-navbar-brand>
       <div class="ml-auto">
         <router-link to="/">Home</router-link>
@@ -22,7 +22,6 @@
 }
 
 #nav {
-  padding: 30px;
   background: #42b883;
 }
 

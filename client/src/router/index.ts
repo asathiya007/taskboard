@@ -22,7 +22,7 @@ const routes = [
   {
     path: "/taskboard",
     name: "Taskboard",
-    component: () => import("../views/Test.vue")
+    component: () => import("../views/Taskboard.vue")
   }
 ];
 
