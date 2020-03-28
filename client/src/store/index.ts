@@ -1,11 +1,25 @@
 import Vue from "vue";
-import Vuex from "vuex";
+import Vuex, { StoreOptions } from "vuex";
+import { RootState, FormData } from "./types";
 
 Vue.use(Vuex);
+Vue.config.devtools = true;
 
-export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
+const store: StoreOptions<RootState> = {
+  state: {
+    todos: []
+  },
+  mutations: {
+    addTodo(state, payload: FormData) {
+      state.todos = [payload, ...state.todos];
+    }
+  },
+  actions: {
+    addTodo({ commit }, payload) {
+      commit("addTodo", payload);
+    }
+  },
   modules: {}
-});
+};
+
+export default new Vuex.Store<RootState>(store);

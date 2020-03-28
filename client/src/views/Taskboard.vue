@@ -12,6 +12,7 @@
             type="text"
             required
             placeholder="Enter to-do name"
+            v-model="form.todoName"
           ></b-form-input>
         </b-form-group>
 
@@ -25,6 +26,7 @@
             type="text"
             required
             placeholder="Enter to-do description"
+            v-model="form.todoDesc"
           ></b-form-input>
         </b-form-group>
 
@@ -36,6 +38,7 @@
 </template>
 
 <script>
+import { v4 as uuidv4 } from "uuid";
 export default {
   name: "Taskboard",
   data() {
@@ -48,12 +51,7 @@ export default {
     };
   },
   methods: {
-    onSubmit(evt) {
-      evt.preventDefault();
-      alert(JSON.stringify(this.form));
-    },
-    onReset(evt) {
-      evt.preventDefault();
+    clearForm() {
       // Reset our form values
       this.form.todoName = "";
       this.form.todoDesc = "";
@@ -63,6 +61,16 @@ export default {
       this.$nextTick(() => {
         this.show = true;
       });
+    },
+    onSubmit(evt) {
+      evt.preventDefault();
+      const { todoName, todoDesc } = this.form;
+      this.$store.dispatch("addTodo", { id: uuidv4(), todoName, todoDesc });
+      this.clearForm();
+    },
+    onReset(evt) {
+      evt.preventDefault();
+      this.clearForm();
     }
   }
 };
