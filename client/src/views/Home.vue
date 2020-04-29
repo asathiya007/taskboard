@@ -7,11 +7,7 @@
       width="200px"
       class="mh6"
     />
-    <img
-      alt="PostgreSQL logo"
-      src="../assets/postgres.png"
-      width="200px"
-    />
+    <img alt="PostgreSQL logo" src="../assets/postgres.png" width="200px" />
     <HelloWorld msg="Welcome to Taskboard!" />
   </div>
 </template>
