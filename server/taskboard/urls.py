@@ -6,5 +6,6 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('tasks', views.get_tasks, name="get_tasks"),
-    path('add_task', csrf_exempt(views.add_task), name="add_task")
+    path('add_task', csrf_exempt(views.add_task), name="add_task"),
+    path('remove_task', csrf_exempt(views.remove_task), name="remove_task")
 ]
