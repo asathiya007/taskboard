@@ -6,14 +6,15 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    tasks: Array<TaskItem>()
+    tasks: Array<TaskItem>(),
+    count: 0
   },
   mutations: {
     addTodo(state, task: string) {
-      state.tasks.push({ id: state.tasks.length, task });
+      state.tasks.push({ id: state.count++, task });
     },
     removeTodo(state, id: number) {
-      state.tasks = state.tasks.filter((task, i) => i !== id);
+      state.tasks = state.tasks.filter(task => task.id !== id);
     }
   },
   actions: {
