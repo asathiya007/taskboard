@@ -1,2 +1,2 @@
 # taskboard
-A taskboard app built by Akshay Sathiya using Vue (with Vue Router, Vuex, and TypeScript).
+A taskboard app built by Akshay Sathiya using Vue (with Vue Router, Vuex, and TypeScript), Django, and PostgreSQL.
