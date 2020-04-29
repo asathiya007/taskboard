@@ -42,9 +42,9 @@ export default {
   },
   mounted() {
     // get the tasks from the database
-    // fetch("https://jsonplaceholder.typicode.com/users")
-    //   .then(res => res.json())
-    //   .then(data => (this.users = data));
+    fetch("http://localhost:8000/taskboard/tasks")
+      .then(res => res.json())
+      .then(data => (this.$store.state.tasks = data));
     console.log("mounted");
   },
   components: {
