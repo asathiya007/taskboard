@@ -5,7 +5,12 @@
       alt="Django logo"
       src="../assets/django.png"
       width="200px"
-      class="ml6"
+      class="mh6"
+    />
+    <img
+      alt="PostgreSQL logo"
+      src="../assets/postgres.png"
+      width="200px"
     />
     <HelloWorld msg="Welcome to Taskboard!" />
   </div>
