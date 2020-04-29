@@ -6,15 +6,30 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    tasks: Array<TaskItem>(),
-    count: 0
+    tasks: Array<TaskItem>()
   },
   mutations: {
     addTodo(state, task: string) {
-      state.tasks.push({ id: state.count++, task });
+      fetch("http://localhost:8000/taskboard/add_task", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ task })
+      })
+        .then(res => res.json())
+        .then(data => (state.tasks = data));
     },
     removeTodo(state, id: number) {
-      state.tasks = state.tasks.filter(task => task.id !== id);
+      fetch("http://localhost:8000/taskboard/remove_task", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ id })
+      })
+        .then(res => res.json())
+        .then(data => (state.tasks = data));
     }
   },
   actions: {

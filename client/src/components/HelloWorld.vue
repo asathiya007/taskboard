@@ -2,7 +2,8 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      This app was built by Akshay Sathiya using Vue (with Vue Router, Vuex, and TypeScript).
+      This app was built by Akshay Sathiya using Vue (with Vue Router, Vuex, and
+      TypeScript) and Django.
     </p>
   </div>
 </template>
